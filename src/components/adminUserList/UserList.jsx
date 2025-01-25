@@ -128,7 +128,7 @@ function UserList() {
           <h2 className='text-gray fw-bold fs-4 rounded-sm py-2'>Users</h2>
         </div>
         <div className='d-flex justify-content-end'>
-          <a href='' onClick={() => toggleShowAddModal()} className="btn border bg-white btn-falcon-default  text-gray btn-sm mb-2">
+          <a  onClick={() => toggleShowAddModal()} className="btn border bg-white btn-falcon-default  text-gray btn-sm mb-2">
             <i className="fas fa-plus-circle mr-4 px-2"></i>
             New User
           </a>
