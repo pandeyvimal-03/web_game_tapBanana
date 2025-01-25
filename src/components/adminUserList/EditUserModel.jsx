@@ -57,7 +57,7 @@ function EditUserModel(props) {
          const updatedUserDet = { ...userDet };
  
          Object.keys(userDet).forEach((key) => {
-           if (userDet[key].isRequired && userDet[key].value == '') {
+           if (userDet[key].isRequired && userDet[key].value === '') {
              updatedUserDet[key].error = `${userDet[key].name} is required`;
              valid = false;
            } else {

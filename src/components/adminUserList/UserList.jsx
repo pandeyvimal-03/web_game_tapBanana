@@ -5,7 +5,6 @@ import ModelWindow from '../common/ModelWindow';
 import AddUserModel from './AddUserModel';
 import EditUserModel from './EditUserModel';
 import { createUser, updateUser , loadUserList } from '../../actions';
-import { toast } from 'react-toastify';
 import { failedToast } from '../../utils';
 
 function UserList() {

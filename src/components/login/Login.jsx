@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { failedToast, getStorage } from '../../utils'
+import { failedToast} from '../../utils'
 import constant from '../../constant'
-import { Navigate , useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import Loader from '../common/Loader'
 import { login } from '../../actions'
@@ -43,7 +43,7 @@ function Login() {
                     showConfirmButton: false,
                   });
         
-                   if(res?.result?.user_detail?.userRoleId == '1'){
+                   if(res?.result?.user_detail?.userRoleId === 1){
                     navigate(constant?.routes?.admin?.userList) 
                    }
                    else{

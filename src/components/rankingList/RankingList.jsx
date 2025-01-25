@@ -1,6 +1,6 @@
 import React, { useEffect , useState , useContext} from 'react'
 import { loadUserList } from '../../actions'
-import { failedToast , successToast } from '../../utils'
+import { failedToast } from '../../utils'
 import Loader from '../common/Loader'
 import Header from '../common/Header'
 import { SocketContext } from '../../App'
@@ -11,8 +11,10 @@ function RankingList() {
   const [loader, setLoader] = useState(false)
 
    const loadList = async()=>{
+      setLoader(true)
        loadUserList()
           .then((res)=>{
+             setLoader(false)
              if(res.status){
                 setUserList(res.result.sort((a , b)=> b.CLICK_COUNT - a.CLICK_COUNT))
              }
@@ -21,6 +23,7 @@ function RankingList() {
              }
           })
           .catch(()=>{
+            setLoader(false)
               failedToast("Failed To Load User List")
           })
      }
@@ -71,7 +74,7 @@ function RankingList() {
                     <th scope="row">{index+1}</th>
                     <td >{item.USERNAME}</td>
                     <td>{item.EMAIL}</td>
-                    <td>{item.STATUS == 1 ? 'Active' : 'Blocked'}</td>
+                    <td>{item.STATUS === 1 ? 'Active' : 'Blocked'}</td>
                     <td>{item.CLICK_COUNT}</td>
                   </tr>
                   )

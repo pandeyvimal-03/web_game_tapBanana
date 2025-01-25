@@ -1,4 +1,4 @@
-export default {
+const constant =  {
      routes : {
           user : {
             home : '/',
@@ -18,3 +18,5 @@ export default {
 
     
 }
+
+export default constant;

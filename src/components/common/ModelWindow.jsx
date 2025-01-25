@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Modal , ModalBody , ModalHeader } from 'reactstrap'
 function ModelWindow(props) {
     const [modal , setModal] = useState(true)
-    const [msg , setMsg] = useState(props.message)
     const backdrop = props.backdrop ? props.backdrop : true;
 
   const  toggleModal = () => {

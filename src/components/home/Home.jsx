@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 function Home() {
     const token = getStorage(constant.keys.token)
     const ud = getStorage(constant.keys.userDetail)
-    const isAdmin = ud?.userRoleId == 1 ? true : false
+    const isAdmin = ud?.userRoleId === 1 ? true : false
     
     if (token && isAdmin) {
         Swal.fire({
