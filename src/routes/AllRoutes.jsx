@@ -17,7 +17,7 @@ function AdminRoute (props){
     return <Navigate to={constant.routes.user.login}/>
    }
 
-  else if( token && ud.userRoleId != 1){
+  else if( token && ud.userRoleId !== 1){
       return <Navigate to={constant.routes.user.playGame}/>
    }
 

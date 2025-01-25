@@ -1,10 +1,9 @@
 import React , {useContext, useEffect, useState} from 'react'
 import Header from '../common/Header'
-import Loader from '../common/Loader'
 import Banana from '../../assets/images/banana_imgg.png'
 import { SocketContext } from '../../App'
 import { getCount } from '../../actions'
-import { failedToast , successToast } from '../../utils'
+import { failedToast } from '../../utils'
 
 function PlayGround() {
   const socket = useContext(SocketContext);
@@ -28,7 +27,7 @@ function PlayGround() {
 
   useEffect(()=>{
     loadCount()
-  } , [])
+  } , [socket])
 
   const handleBananaClick = () => {
     

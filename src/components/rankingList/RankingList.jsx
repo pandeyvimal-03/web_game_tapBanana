@@ -37,7 +37,7 @@ function RankingList() {
     return () => {
       socket.off("update-rankings");
     };
-   } , [])
+   } , [socket])
 
   return (
     <div>
